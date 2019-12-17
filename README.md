@@ -40,9 +40,7 @@ To create a new OIDC app on Okta:
 3. Select **Single-Page App** and click **Next**. 
 4. Give the application a name, change all instances of `http://localhost:8080` to `http://localhost:3000` and click **Done**.
 
-Set your `issuer` and copy the `clientId` in to `src/app/app.module.ts`. 
-
-**NOTE:** The value of `{yourOktaDomain}` should be something like `dev-123456.okta.com`. Make sure you don't include `-admin` in the value!
+Set your `issuer` and copy the `clientId` in `src/App.js`. 
 
 ```js
 const config = {
@@ -52,6 +50,8 @@ const config = {
   pkce: true
 };
 ```
+
+You should now be able to login and use this app's calculator feature at <http://localhost:3000>.
 
 ## Links
 

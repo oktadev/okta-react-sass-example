@@ -35,12 +35,12 @@ npm start
 
 To create a new OIDC app on Okta:
 
-1. Log in to your developer account (or [create a free one](https://developer.okta.com/signup).
+1. Log in to your developer account (or [create a free one](https://developer.okta.com/signup)).
 2. Navigate to **Applications**, and click on **Add Application**.
 3. Select **Single-Page App** and click **Next**. 
 4. Give the application a name, change all instances of `http://localhost:8080` to `http://localhost:3000` and click **Done**.
 
-Set your `issuer` and copy the `clientId` in `src/App.js`. 
+Set your `issuer` and copy the `clientId` in to `src/App.js`. 
 
 ```js
 const config = {

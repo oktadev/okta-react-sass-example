@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Sass Example
+ 
+This example shows how to use Sass with React to build beautiful apps.
 
-## Available Scripts
+Please read [Use Sass with React to Build Beautiful Apps](https://developer.okta.com/blog/2019/12/17/react-sass) to see how this app was created.
 
-In the project directory, you can run:
+**Prerequisites:** [Node.js](https://nodejs.org/) v10+. 
 
-### `npm start`
+> [Okta](https://developer.okta.com/) has Authentication and User Management APIs that reduce development time with instant-on, scalable user infrastructure. Okta's intuitive API and expert support make it easy for developers to authenticate, manage and secure users and roles in any application.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Getting Started](#getting-started)
+* [Links](#links)
+* [Help](#help)
+* [License](#license)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To install this example application, run the following commands:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/oktadeveloper/okta-react-sass-example.git
+cd okta-react-sass-example
+```
 
-### `npm run build`
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the app using:
+ 
+```bash
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Create a New OIDC App in Okta
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To create a new OIDC app on Okta:
 
-### `npm run eject`
+1. Log in to your developer account (or [create a free one](https://developer.okta.com/signup).
+2. Navigate to **Applications**, and click on **Add Application**.
+3. Select **Single-Page App** and click **Next**. 
+4. Give the application a name, change all instances of `http://localhost:8080` to `http://localhost:3000` and click **Done**.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Set your `issuer` and copy the `clientId` in to `src/app/app.module.ts`. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**NOTE:** The value of `{yourOktaDomain}` should be something like `dev-123456.okta.com`. Make sure you don't include `-admin` in the value!
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+const config = {
+  issuer: 'https://{yourOktaDomain}/oauth2/default',
+  redirect_uri: window.location.origin + '/implicit/callback',
+  client_id: '{yourClientId}',
+  pkce: true
+};
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Links
 
-## Learn More
+This example uses the following open source libraries from Okta:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [Okta React SDK](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-react)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Help
 
-### Code Splitting
+Please post any questions as comments on the [blog post](https://developer.okta.com/blog/2019/12/17/react-sass), or visit our [Okta Developer Forums](https://devforum.okta.com/). 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Apache 2.0, see [LICENSE](LICENSE).

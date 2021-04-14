@@ -5,7 +5,7 @@ import Home from './Home';
 
 const config = {
   issuer: 'https://dev-133320.okta.com/oauth2/default',
-  redirect_uri: window.location.origin + '/implicit/callback',
+  redirect_uri: window.location.origin + '/callback',
   client_id: '0oa28jhpsrHyEB6vu357',
   pkce: true
 };
@@ -17,7 +17,7 @@ class App extends Component {
       <Router>
         <Security {...config}>
           <Route path="/" exact={true} component={Home}/>
-          <Route path="/implicit/callback" component={ImplicitCallback}/>
+          <Route path="/callback" component={ImplicitCallback}/>
         </Security>
       </Router>
     );

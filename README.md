@@ -45,19 +45,19 @@ Set your `issuer` and copy the `clientId` in to `src/App.js`.
 ```js
 const config = {
   issuer: 'https://{yourOktaDomain}/oauth2/default',
-  redirect_uri: window.location.origin + '/implicit/callback',
+  redirect_uri: window.location.origin + '/callback',
   client_id: '{yourClientId}',
   pkce: true
 };
 ```
 
-You should now be able to login and use this app's calculator feature at <http://localhost:3000>.
+You should now be able to log in and use this app's calculator feature at `http://localhost:3000`.
 
 ## Links
 
 This example uses the following open source libraries from Okta:
 
-* [Okta React SDK](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-react)
+* [Okta React SDK](https://github.com/okta/okta-react)
 
 ## Help
 

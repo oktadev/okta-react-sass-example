@@ -17,7 +17,7 @@ class App extends Component {
       <Router>
         <Security {...config}>
           <Route path="/" exact={true} component={Home}/>
-          <Route path="/implicit/callback" component={ImplicitCallback}/>
+          <Route path="/callback" component={ImplicitCallback}/>
         </Security>
       </Router>
     );
